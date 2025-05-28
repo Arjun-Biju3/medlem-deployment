@@ -1,0 +1,38 @@
+.edit-profile-main {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.edit-profile-main table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 400px; 
+}
+
+.edit-profile-main td,
+.edit-profile-main tr {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.edit-profile-main input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px;
+    font-size: 14px;
+}
+
+.updtae-btn-profile {
+    padding: 8px 16px;
+    border: none;
+    background-color: #05415a;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.updtae-btn-profile:hover {
+    background-color: #156d96;
+}

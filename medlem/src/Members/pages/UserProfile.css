@@ -1,0 +1,163 @@
+.profile-container {
+    width: 400px;
+    margin: 100px auto 40px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .profile-header {
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .profile-edit-button {
+    background-color: rgb(4, 87, 123);
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .profile-logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-details {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .profile-details p {
+    margin: 5px 0;
+  }
+  
+  .profile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-sections{
+    margin-top: -10px;
+  }
+
+  .profile-sections h2 {
+    font-size: 18px;
+    margin: 15px 0 5px;
+    text-align: left;
+  }
+  
+  .profile-sections p {
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+  }
+  
+  .profile-create-button {
+    background-color: orange;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  table{
+    border: 1px solid black;
+  }
+  .memberships
+  {
+    margin-left: -100px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .view-btn{
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .view-color
+  {
+    background-color: white;
+    border: 1px solid black;
+    height: 30px;
+  }
+  .mem-items{
+    height: 100px;
+    width: 300px;
+    border: 1px solid black;
+  }
+  .log-table-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid black;
+  }
+  
+  
+  .log-table-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+  .log-table-container {
+    scrollbar-width: none;
+  }
+
+  .log-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .log-table th,
+  .log-table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .log-table thead th {
+ 
+    top: 0;
+    background-color: #f1f1f1;
+    z-index: 1;
+  }
+  .mem-items {
+    height: 100px;
+    width: 300px;
+    border: 1px solid black;
+    overflow-x: auto;         
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .mem-items img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+  
+  
