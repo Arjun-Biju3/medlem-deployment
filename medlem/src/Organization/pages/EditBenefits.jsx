@@ -30,7 +30,7 @@ function EditBenefits() {
         const getDetails = async()=>{
             console.log("get benefits");
             try{
-                const response =await axios.get(`http://localhost:5000/api/organization/getbenefitsByid/${id}`)
+                const response =await axios.get(`/api/organization/getbenefitsByid/${id}`)
                 let data = response.data.benefit
                  setName(data.name)
                  setLimit(data.limit)
@@ -54,7 +54,7 @@ function EditBenefits() {
           formData.append('image',image);
       }
       try{
-         const response = await axios.patch(`http://localhost:5000/api/organization/updatebenefitsByid/${id}`,formData,{
+         const response = await axios.patch(`/api/organization/updatebenefitsByid/${id}`,formData,{
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

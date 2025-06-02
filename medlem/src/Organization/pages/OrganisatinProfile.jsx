@@ -35,7 +35,7 @@ function OrganisationProfile() {
   const handleDeleteSubscription =async (id)=>{
     console.log("delete subscription",id);
     try{
-      const response = await axios.delete(`http://localhost:5000/api/organization/deletesubscription/${id}`)
+      const response = await axios.delete(`/api/organization/deletesubscription/${id}`)
       setSubscriptions(subscriptions.filter(sub=>sub._id !== id))
       window.alert(response.data.message);
    }catch(error){
@@ -54,7 +54,7 @@ function OrganisationProfile() {
   const handleDeleteBillings =async (id)=>{
     console.log("delete billing",id);
     try{
-      const response = await axios.delete(`http://localhost:5000/api/organization/deletebilling/${id}`)
+      const response = await axios.delete(`/api/organization/deletebilling/${id}`)
       setBillings(billings.filter(bill=>bill._id !== id))
       window.alert(response.data.message);
    }catch(error){
@@ -72,7 +72,7 @@ function OrganisationProfile() {
   const handleDeleteBenefits =async (id)=>{
     console.log("delete benefits",id);
     try{
-      const response = await axios.delete(`http://localhost:5000/api/organization/deletebenefit/${id}`)
+      const response = await axios.delete(`/api/organization/deletebenefit/${id}`)
       setBenefits(benefits.filter(benefits=>benefits._id !== id))
       window.alert(response.data.message);
    }catch(error){
@@ -92,7 +92,7 @@ function OrganisationProfile() {
     const fetchData = async () => {
       if (!userId) return;
       try {
-        const response = await axios.get(`http://localhost:5000/api/organization/getOrganization/${userId}`);
+        const response = await axios.get(`/api/organization/getOrganization/${userId}`);
         const org = response.data.org?.[0];
         console.log(response.data);
         if (org) {
@@ -123,7 +123,7 @@ function OrganisationProfile() {
         </Link>
 
         <div className="org-logo">
-          <img src={`http://localhost:5000/${orgImage}`} alt="Organization Logo" />
+          <img src={`/${orgImage}`} alt="Organization Logo" />
         </div>
 
         <div className="org-actions">
@@ -200,7 +200,7 @@ function OrganisationProfile() {
         {benefits.length > 0 ? (
           benefits.map((item, index) => (
             <p key={index}>
-            <img style={{width:50,height:50}} src={`http://localhost:5000/${item.image}`} alt="image" /> <strong>{item.name}</strong>
+            <img style={{width:50,height:50}} src={`/${item.image}`} alt="image" /> <strong>{item.name}</strong>
               <>
           <span
             style={{ cursor: 'pointer', marginLeft: '10px' }}

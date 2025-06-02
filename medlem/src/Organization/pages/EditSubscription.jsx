@@ -25,7 +25,7 @@ function EditSubscription() {
         const getDetails =async ()=>{
             console.log("getDetails");
             try{
-                const response =await axios.get(`http://localhost:5000/api/organization/getsubscriptionByid/${id}`)
+                const response =await axios.get(`/api/organization/getsubscriptionByid/${id}`)
                 let data = response.data.subscription
                 setName(data.name)
                 setLimit(data.limit)
@@ -47,7 +47,7 @@ function EditSubscription() {
      } 
      
      try{
-         const response = await axios.patch(`http://localhost:5000/api/organization/updatesubscriptionByid/${id}`,formData,{
+         const response = await axios.patch(`/api/organization/updatesubscriptionByid/${id}`,formData,{
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

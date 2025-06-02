@@ -16,7 +16,7 @@ function EditProfile() {
     useEffect(()=>{
       const findData = async ()=>{
         try{
-          const response = await axios.get(`http://localhost:5000/api/organization/getOrganization/${id}`)
+          const response = await axios.get(`/api/organization/getOrganization/${id}`)
           const org = response.data.org[0];
           console.log(response.data.org);
           
@@ -49,7 +49,7 @@ function EditProfile() {
         console.log(organizationName,address,orgUsername,orgImage);
         
         try{
-        const response = await axios.patch(`http://localhost:5000/api/organization/update/${orgId}`,formData,
+        const response = await axios.patch(`/api/organization/update/${orgId}`,formData,
         {
           headers: {
             'Content-Type': 'multipart/form-data'

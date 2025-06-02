@@ -23,7 +23,7 @@ function EditUserProfile() {
     useEffect(()=>{
         const fetchDeatils = async()=>{
            try{
-            const response =await axios.get(`http://localhost:5000/api/member/getMemberById/${id}`)
+            const response =await axios.get(`/api/member/getMemberById/${id}`)
             const member = response.data.member
             setFname(member.firstName)
             setLname(member.lastName)
@@ -56,7 +56,7 @@ function EditUserProfile() {
 
         try{
 
-            const response = await axios.patch(`http://localhost:5000/api/member/updatememberdetails/${userId}`,formData,{
+            const response = await axios.patch(`/api/member/updatememberdetails/${userId}`,formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

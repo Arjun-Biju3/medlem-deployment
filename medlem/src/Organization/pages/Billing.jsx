@@ -15,7 +15,7 @@ function Billing() {
     useEffect(()=>{
         const fetchSubscriptions = async()=>{
             try{
-                const response = await axios.get('http://localhost:5000/api/organization/getSubscriptions')
+                const response = await axios.get('/api/organization/getSubscriptions')
                 console.log(response.data.organizations);
                 setSubscriptions(response.data.organizations)  
             }
@@ -42,7 +42,7 @@ function Billing() {
      e.preventDefault()
     console.log(name,limit,amount);
     try{
-        const response = await axios.post('http://localhost:5000/api/organization/createBilling',{
+        const response = await axios.post('/api/organization/createBilling',{
             name:name,
             time_interval:limit,
             amount:amount,

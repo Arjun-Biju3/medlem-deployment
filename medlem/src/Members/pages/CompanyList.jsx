@@ -7,7 +7,7 @@ function CompanyList() {
   useEffect(()=>{
     const fetchCompanies =async ()=>{
         try{
-          const response = await axios.get('http://localhost:5000/api/member/getOrganizations');
+          const response = await axios.get('/api/member/getOrganizations');
           setCompanies(response.data.organization)
         
         }

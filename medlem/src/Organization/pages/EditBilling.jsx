@@ -17,7 +17,7 @@ function EditBilling() {
      useEffect(()=>{
          const fetchDetails = async()=>{
              try{
-                const response =await axios.get(`http://localhost:5000/api/organization/getbillingByid/${id}`)
+                const response =await axios.get(`/api/organization/getbillingByid/${id}`)
                 let data = response.data.billing
                  setName(data.name)
                  setLimit(data.limit)
@@ -48,7 +48,7 @@ function EditBilling() {
       e.preventDefault()
      console.log(name,limit,amount);
      try{
-         const response = await axios.patch(`http://localhost:5000/api/organization/updatebillingByid/${id}`,{
+         const response = await axios.patch(`/api/organization/updatebillingByid/${id}`,{
              name:name,
              time_interval:limit,
              amount:amount,

@@ -56,7 +56,7 @@ function Registration() {
             formData.append('image', memberImage);
         }
         try{
-            const response = await axios.post('http://localhost:5000/api/member/signup',formData,{
+            const response = await axios.post('/api/member/signup',formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -89,7 +89,7 @@ function Registration() {
             formData.append('image', orgImage);
         }
         try{
-            const response = await axios.post('http://localhost:5000/api/organization/signup',formData,{
+            const response = await axios.post('/api/organization/signup',formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

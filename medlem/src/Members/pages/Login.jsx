@@ -28,7 +28,7 @@ const auth = useContext(AuthContext)
     if(role == "organization"){
         console.log(role);
         try{
-        const response = await axios.post('http://localhost:5000/api/organization/login',{
+        const response = await axios.post('/api/organization/login',{
             username:username,
             password:password
         })
@@ -50,7 +50,7 @@ const auth = useContext(AuthContext)
     else{
         console.log(role);
         try{
-        const response = await axios.post('http://localhost:5000/api/member/login',{
+        const response = await axios.post('/api/member/login',{
             username:username,
             password:password
         })

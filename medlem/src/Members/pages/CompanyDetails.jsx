@@ -39,7 +39,7 @@ function CompanyDetails() {
   const confirmCancel = async () => {
     setShowCancelPopup(false);
     try {
-      const response = await axios.delete('http://localhost:5000/api/member/deletemembership', {
+      const response = await axios.delete('/api/member/deletemembership', {
         data: {
           member_id: userId,
           org_id: id
@@ -77,7 +77,7 @@ function CompanyDetails() {
   const handleAccessSubmit = async () => {
     if (allSelected) {
       try {
-        const response = await axios.post('http://localhost:5000/api/member/addmembership', {
+        const response = await axios.post('/api/member/addmembership', {
           orgId: id,
           member_id: userId
         });
@@ -108,7 +108,7 @@ function CompanyDetails() {
   const handleSubscribe =async (subId) => {
     console.log("Subscribed to:", subId);  
     try {
-      const response = await axios.post('http://localhost:5000/api/member/addSubscriptions', {
+      const response = await axios.post('/api/member/addSubscriptions', {
         member_id:userId,
         membership_id:membership_id,
         subscription_id:subId
@@ -131,7 +131,7 @@ function CompanyDetails() {
   const handleUnsubscribe =async (subId) => {
     console.log("Unsubscribed from:", subId);
     try {
-      const response = await axios.post('http://localhost:5000/api/member/unsubscribe', {
+      const response = await axios.post('/api/member/unsubscribe', {
         member_id:userId,
         membership_id:membership_id,
         subscription_id:subId
@@ -154,7 +154,7 @@ function CompanyDetails() {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/organization/getOrganization/${id}`);
+        const response = await axios.get(`/api/organization/getOrganization/${id}`);
         const org = response.data.org[0];
         setName(org.name);
         setAddress(org.address);
@@ -169,7 +169,7 @@ function CompanyDetails() {
       }
 
       try {
-        const response = await axios.post('http://localhost:5000/api/member/getmemStatus', {
+        const response = await axios.post('/api/member/getmemStatus', {
           member_id: userId,
           org_id: id
         });
@@ -181,7 +181,7 @@ function CompanyDetails() {
       }
 
       try{
-        const response = await axios.get(`http://localhost:5000/api/member/getSubscribedIds/${userId}`);
+        const response = await axios.get(`/api/member/getSubscribedIds/${userId}`);
         console.log(response.data.subscriptionIds[0]);
         setSubscribedids(response.data.subscriptionIds)
       }
@@ -196,7 +196,7 @@ function CompanyDetails() {
     <div className="org-profile-container">
       <div className="org-profile-header">
         <div className="org-logo">
-          <img src={`http://localhost:5000/${image}`} alt="Organization Logo" />
+          <img src={`/${image}`} alt="Organization Logo" />
         </div>
       </div>
 
@@ -248,7 +248,7 @@ function CompanyDetails() {
         <h2>Benefits</h2>
         <hr />
         {benefits.map((ben, i) => (
-          <p key={i}><img style={{width:50,height:50}} src={`http://localhost:5000/${ben.image}`} alt="image" /> {ben.name} </p>
+          <p key={i}><img style={{width:50,height:50}} src={`/${ben.image}`} alt="image" /> {ben.name} </p>
         ))}
       </div>
 

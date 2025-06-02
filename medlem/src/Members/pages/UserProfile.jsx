@@ -30,10 +30,10 @@ function UserProfile() {
           subscriptionsRes,
           membershipRes
         ] = await Promise.all([
-          axios.get(`http://localhost:5000/api/member/getMemberById/${userId}`),
-          axios.get(`http://localhost:5000/api/member/getLogs/${userId}`),
-          axios.get(`http://localhost:5000/api/member/getSubscriptionsById/${userId}`),
-          axios.get(`http://localhost:5000/api/member/getMembershipById/${userId}`)
+          axios.get(`/api/member/getMemberById/${userId}`),
+          axios.get(`/api/member/getLogs/${userId}`),
+          axios.get(`/api/member/getSubscriptionsById/${userId}`),
+          axios.get(`/api/member/getMembershipById/${userId}`)
         ]);
 
         const member = memberRes.data.member;
@@ -63,7 +63,7 @@ function UserProfile() {
 
   const handleUnsubscribe = async (id, orgId, subscription_id) => {
     try {
-      const response = await axios.delete('http://localhost:5000/api/member/unSubscribeById', {
+      const response = await axios.delete('/api/member/unSubscribeById', {
         data: {
           id,
           orgId,
@@ -93,7 +93,7 @@ function UserProfile() {
     <div className="profile-container">
       <div className="profile-header">
         <div className="profile-logo">
-          <img src={`http://localhost:5000/${userImage}`} alt="user logo" />
+          {/* <img src={`/api/${userImage}`} alt="user logo" /> */}
         </div>
         <div className="profile-actions">
           <Link to={`/userprofile/${userId}`}>
@@ -140,12 +140,12 @@ function UserProfile() {
         <hr />
         {subscriptions?.map((item) => (
           <p key={item._id}>
-            <img
+            {/* <img
               style={{ width: 50, height: 50 }}
-              src={`http://localhost:5000/${item.subscription_id?.image}`}
+              src={`/api/${item.subscription_id?.image}`}
               alt="subscription"
               onError={(e) => { e.target.src = "/default-logo.png"; }}
-            />{" "}
+            />{" "} */}
             {item.subscription_id?.name}
             <span
               style={{ cursor: 'pointer', marginLeft: '10px' }}
@@ -168,24 +168,26 @@ function UserProfile() {
               {displayItem === "companies" ? (
                 company.map((item) =>
                   item.organization_info?.profile_image && (
-                    <img
-                      key={item._id}
-                      src={`http://localhost:5000/${item.organization_info.profile_image}`}
-                      alt="org logo"
-                      onError={(e) => { e.target.src = "/default-org.png"; }}
-                    />
+                    // <img
+                    //   key={item._id}
+                    //   src={`/api/${item.organization_info.profile_image}`}
+                    //   alt="org logo"
+                    //   onError={(e) => { e.target.src = "/default-org.png"; }}
+                    // />
+                    <h3>image</h3>
                   )
                 )
               ) : (
                 company.map((item) =>
                   item.benefits?.map((ben) =>
                     ben.image && (
-                      <img
-                        key={ben._id}
-                        src={`http://localhost:5000/${ben.image}`}
-                        alt="benefit logo"
-                        onError={(e) => { e.target.src = "/default-benefit.png"; }}
-                      />
+                      // <img
+                      //   key={ben._id}
+                      //   src={`/api/${ben.image}`}
+                      //   alt="benefit logo"
+                      //   onError={(e) => { e.target.src = "/default-benefit.png"; }}
+                      // />
+                      <h3>company image</h3>
                     )
                   )
                 )

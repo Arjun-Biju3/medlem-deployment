@@ -8,7 +8,7 @@ function CompanyItems({ company }) {
       <div className="logo-container">
        <Link to={`/companydetails/${company.org_id }`}>
        <img
-          src={`http://localhost:5000/${company.profile_image}`}
+          src={`/api/${company.profile_image}`}
           alt={`${company.name} logo`}
           className="company-logo"
         />
