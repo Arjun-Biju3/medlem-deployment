@@ -1,6 +1,11 @@
 pipeline {
     agent { label 'minikube' }
 
+    triggers {
+        pollSCM('* * * * *') 
+    }
+
+
     environment {
         IMAGE_CLIENT = 'arjun332/medlem-frontend:latest'
         IMAGE_SERVER = 'arjun332/medlem-backend:latest'
