@@ -15,5 +15,6 @@ spec:
       containers:
         - name: client
           image: arjun332/medlem-frontend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80

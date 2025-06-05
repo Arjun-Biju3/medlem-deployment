@@ -15,5 +15,6 @@ spec:
       containers:
         - name: server
           image: arjun332/medlem-backend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
