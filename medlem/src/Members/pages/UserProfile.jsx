@@ -6,7 +6,7 @@ import { useAuth } from '../../Shared/hooks/auth-hook';
 import axios from 'axios';
 import ProfilePicture from '../../assets/profilepic.avif'
 import puma from '../../assets/puma.png'
-import apple from '../../assets/apple.png'
+import Apple from '../../assets/Apple.png'
 
 function UserProfile() {
   const { userId } = useAuth();
@@ -173,7 +173,7 @@ function UserProfile() {
                   item.organization_info?.profile_image && (
                     <img
                       key={item._id}
-                      src={apple}
+                      src={Apple}
                       alt="org logo"
                       onError={(e) => { e.target.src = "/default-org.png"; }}
                     />
