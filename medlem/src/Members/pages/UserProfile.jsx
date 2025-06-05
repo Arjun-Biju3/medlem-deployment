@@ -6,7 +6,7 @@ import { useAuth } from '../../Shared/hooks/auth-hook';
 import axios from 'axios';
 import ProfilePicture from '../../assets/profilepic.avif'
 import puma from '../../assets/puma.png'
-import Apple from '../../assets/Apple.png'
+import Apple from '../../assets/apple.png'
 
 function UserProfile() {
   const { userId } = useAuth();
