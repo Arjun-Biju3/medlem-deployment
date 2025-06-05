@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'minikube' }
 
     environment {
         IMAGE_CLIENT = 'arjun332/medlem-frontend:latest'
