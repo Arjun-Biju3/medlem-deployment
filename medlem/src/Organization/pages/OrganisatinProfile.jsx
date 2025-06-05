@@ -134,7 +134,7 @@ function OrganisationProfile() {
       </div>
 
       <div className="org-details">
-        <p><strong>Organization Name:</strong> {organizationName}</p>
+        <p><strong>Organization</strong> {organizationName}</p>
         <p><strong>Address:</strong> {address}</p>
         <p><strong>No. of Members:</strong> {noOfMembers}</p>
       </div>
