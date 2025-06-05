@@ -21,7 +21,7 @@ function CompanyList() {
     <div> 
      <div style={{marginTop:"100px"}}>
      <h2 style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif', marginTop: '50px' }}>
-        Browse Organizations
+        Organizations
       </h2>
       <div style={{ marginTop: '20px' }}>
         {companies.map((company) => (

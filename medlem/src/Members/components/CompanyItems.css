@@ -1,34 +1,50 @@
 .company-card {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #ccc;
-    padding: 15px 10px;
-    max-width: 500px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-  }
-  
-  .logo-container {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin-right: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-  }
-  
-  .company-logo {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
-  
-  .company-name {
-    font-size: 16px;
-    color: #333;
-    text-transform: lowercase;
-  }
-  
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 20px;
+  max-width: 600px;
+  margin: 16px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid #e5e7eb;
+}
+
+.company-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.logo-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  border: 2px solid #e0e0e0;
+}
+
+.company-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+  transform: scale(1.1);
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}

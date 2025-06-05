@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import './UserProfile.css';
 import { useAuth } from '../../Shared/hooks/auth-hook';
 import axios from 'axios';
+import ProfilePicture from '../../assets/profilepic.avif'
+import puma from '../../assets/puma.png'
+import apple from '../../assets/apple.png'
 
 function UserProfile() {
   const { userId } = useAuth();
@@ -93,7 +96,7 @@ function UserProfile() {
     <div className="profile-container">
       <div className="profile-header">
         <div className="profile-logo">
-          {/* <img src={`/api/${userImage}`} alt="user logo" /> */}
+          <img src={ProfilePicture} alt="user logo" />
         </div>
         <div className="profile-actions">
           <Link to={`/userprofile/${userId}`}>
@@ -140,12 +143,12 @@ function UserProfile() {
         <hr />
         {subscriptions?.map((item) => (
           <p key={item._id}>
-            {/* <img
+            <img
               style={{ width: 50, height: 50 }}
-              src={`/api/${item.subscription_id?.image}`}
+              src={puma}
               alt="subscription"
               onError={(e) => { e.target.src = "/default-logo.png"; }}
-            />{" "} */}
+            />{" "}
             {item.subscription_id?.name}
             <span
               style={{ cursor: 'pointer', marginLeft: '10px' }}
@@ -168,26 +171,26 @@ function UserProfile() {
               {displayItem === "companies" ? (
                 company.map((item) =>
                   item.organization_info?.profile_image && (
-                    // <img
-                    //   key={item._id}
-                    //   src={`/api/${item.organization_info.profile_image}`}
-                    //   alt="org logo"
-                    //   onError={(e) => { e.target.src = "/default-org.png"; }}
-                    // />
-                    <h3>image</h3>
+                    <img
+                      key={item._id}
+                      src={apple}
+                      alt="org logo"
+                      onError={(e) => { e.target.src = "/default-org.png"; }}
+                    />
+                  
                   )
                 )
               ) : (
                 company.map((item) =>
                   item.benefits?.map((ben) =>
                     ben.image && (
-                      // <img
-                      //   key={ben._id}
-                      //   src={`/api/${ben.image}`}
-                      //   alt="benefit logo"
-                      //   onError={(e) => { e.target.src = "/default-benefit.png"; }}
-                      // />
-                      <h3>company image</h3>
+                      <img
+                        key={ben._id}
+                        src={puma}
+                        alt="benefit logo"
+                        onError={(e) => { e.target.src = "/default-benefit.png"; }}
+                      />
+                  
                     )
                   )
                 )
